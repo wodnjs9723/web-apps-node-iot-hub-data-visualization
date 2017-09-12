@@ -95,10 +95,10 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.accX || !obj.accY || !obj.accZ) {
+      if(!obj.timeunix || !obj.accX || !obj.accY || !obj.accZ) {
         return;
       }
-      timeData.push(obj.time);
+      timeData.push(obj.timeunix);
       accXDataArray.push(obj.accX);
       // only keep no more than 50 points in the line chart
       // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
