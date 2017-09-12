@@ -1,10 +1,10 @@
 $(document).ready(function () {
-  var timeData = [],
+  var timeDataArray = [],
     accXDataArray = [],     //temperatureData
     accYDataArray = [];     //humidityData
     accZDataArray = [];     
   var data = {
-    labels: timeData,
+    labels: timeDataArray,
     datasets: [
       {
         fill: false,
@@ -15,7 +15,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: accXData
+        data: accXDataArray
       },
       {
         fill: false,
@@ -26,7 +26,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: accYData
+        data: accYDataArray
       },
       {
         fill: false,
@@ -37,7 +37,7 @@ $(document).ready(function () {
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: accZData
+        data: accZDataArray
       },
     ]
   }
@@ -98,14 +98,14 @@ $(document).ready(function () {
       if(!obj.timeunix || !obj.accX || !obj.accY || !obj.accZ) {
         return;
       }
-      timeData.push(obj.timeunix);
+      timeDataArray.push(obj.timeunix);
       accXDataArray.push(obj.accX);
       // only keep no more than 50 points in the line chart
       // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
       const maxLen = 50;
-      var len = timeData.length;
+      var len = timeDataArray.length;
       if (len > maxLen) {
-        timeData.shift();
+        timeDataArray.shift();
         accXDataArray.shift();
       }
 
