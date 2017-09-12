@@ -32,13 +32,13 @@ $(document).ready(function () {
         fill: false,
         label: 'accZ',
         yAxisID: 'accZ',
-        borderColor: "rgba(24, 120, 240, 1)",
-        pointBoarderColor: "rgba(24, 120, 240, 1)",
-        backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        borderColor: "rgba(0, 0, 240, 1)",
+        pointBoarderColor: "rgba(0, 0, 240, 1)",
+        backgroundColor: "rgba(0, 0, 240, 0.4)",
+        pointHoverBackgroundColor: "rgba(0, 0, 240, 1)",
+        pointHoverBorderColor: "rgba(0, 0, 240, 1)",
         data: accZDataArray
-      },
+      }
     ]
   }
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
     },
     scales: {
       yAxes: [{
-        id: 'AccX',
+        id: 'accX',
         type: 'linear',
         scaleLabel: {
           labelString: 'AccX(X)',
@@ -58,7 +58,7 @@ $(document).ready(function () {
         },
         position: 'left',
       }, {
-          id: 'AccY',
+          id: 'accY',
           type: 'linear',
           scaleLabel: {
             labelString: 'AccY(Y)',
@@ -66,7 +66,7 @@ $(document).ready(function () {
           },
           position: 'right'
         }, {
-          id: 'AccZ',
+          id: 'accZ',
           type: 'linear',
           scaleLabel: {
             labelString: 'AccZ(Z)',
