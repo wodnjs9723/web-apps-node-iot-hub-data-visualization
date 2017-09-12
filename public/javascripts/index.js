@@ -16,7 +16,9 @@ $(document).ready(function () {
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accXDataArray
-      },
+      }
+      /*
+      ,
       {
         fill: false,
         label: 'accY',
@@ -39,6 +41,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(0, 0, 240, 1)",
         data: accZDataArray
       }
+      */ 
     ]
   }
 
