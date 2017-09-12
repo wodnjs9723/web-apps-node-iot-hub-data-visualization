@@ -7,49 +7,68 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Val',
-        yAxisID: 'Temperature',
+        label: 'accX',
+        yAxisID: 'accX',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: temperatureData
+        data: accXData
       },
       {
         fill: false,
-        label: 'Humidity',
-        yAxisID: 'Humidity',
+        label: 'accY',
+        yAxisID: 'accY',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
-        data: humidityData
-      }
+        data: accYData
+      },
+      {
+        fill: false,
+        label: 'accZ',
+        yAxisID: 'accZ',
+        borderColor: "rgba(24, 120, 240, 1)",
+        pointBoarderColor: "rgba(24, 120, 240, 1)",
+        backgroundColor: "rgba(24, 120, 240, 0.4)",
+        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
+        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        data: accZData
+      },
     ]
   }
 
   var basicOption = {
     title: {
       display: true,
-      text: 'Val & Humidity Real-time Data',
+      text: 'AccX, AccY, AccZ Real-time Data',
       fontSize: 36
     },
     scales: {
       yAxes: [{
-        id: 'Temperature',
+        id: 'AccX',
         type: 'linear',
         scaleLabel: {
-          labelString: 'Val(C)',
+          labelString: 'AccX(force)',
           display: true
         },
         position: 'left',
       }, {
-          id: 'Humidity',
+          id: 'AccY',
           type: 'linear',
           scaleLabel: {
-            labelString: 'Humidity(%)',
+            labelString: 'AccY(force)',
+            display: true
+          },
+          position: 'right'
+        }, {
+          id: 'AccZ',
+          type: 'linear',
+          scaleLabel: {
+            labelString: 'AccZ(force)',
             display: true
           },
           position: 'right'
