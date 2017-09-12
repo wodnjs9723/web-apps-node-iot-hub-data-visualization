@@ -1,7 +1,8 @@
 $(document).ready(function () {
   var timeData = [],
-    temperatureData = [],
-    humidityData = [];
+    accXDataArray = [],     //temperatureData
+    accYDataArray = [];     //humidityData
+    accZDataArray = [];     
   var data = {
     labels: timeData,
     datasets: [
@@ -52,7 +53,7 @@ $(document).ready(function () {
         id: 'AccX',
         type: 'linear',
         scaleLabel: {
-          labelString: 'AccX(force)',
+          labelString: 'AccX(X)',
           display: true
         },
         position: 'left',
@@ -60,7 +61,7 @@ $(document).ready(function () {
           id: 'AccY',
           type: 'linear',
           scaleLabel: {
-            labelString: 'AccY(force)',
+            labelString: 'AccY(Y)',
             display: true
           },
           position: 'right'
@@ -68,7 +69,7 @@ $(document).ready(function () {
           id: 'AccZ',
           type: 'linear',
           scaleLabel: {
-            labelString: 'AccZ(force)',
+            labelString: 'AccZ(Z)',
             display: true
           },
           position: 'right'
@@ -89,30 +90,40 @@ $(document).ready(function () {
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
   }
+
   ws.onmessage = function (message) {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.time || !obj.val) {
+      if(!obj.time || !obj.accX || !obj.accY || !obj.accZ) {
         return;
       }
       timeData.push(obj.time);
-      temperatureData.push(obj.val);
+      accXDataArray.push(obj.accX);
       // only keep no more than 50 points in the line chart
+      // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
       const maxLen = 50;
       var len = timeData.length;
       if (len > maxLen) {
         timeData.shift();
-        temperatureData.shift();
+        accXDataArray.shift();
       }
 
-      if (obj.humidity) {
-        humidityData.push(obj.humidity);
+      // ACC Y
+      if (obj.accY) {
+        accYDataArray.push(obj.accY);    //humidityData
       }
-      if (humidityData.length > maxLen) {
-        humidityData.shift();
+      if (accYDataArray.length > maxLen) {
+        accYDataArray.shift();
       }
-
+      // ACC Z
+      if (obj.accZ) {
+        accYDataArray.push(obj.accZ);
+      }
+      if (accZDataArray.length > maxLen) {
+        accZDataArray.shift();
+      }
+      // LineChart Update
       myLineChart.update();
     } catch (err) {
       console.error(err);
