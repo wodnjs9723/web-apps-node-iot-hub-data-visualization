@@ -57,7 +57,9 @@ $(document).ready(function () {
           display: true
         },
         position: 'left',
-      }, {
+      }
+      /*
+      , {
           id: 'accY',
           type: 'linear',
           scaleLabel: {
@@ -73,7 +75,9 @@ $(document).ready(function () {
             display: true
           },
           position: 'right'
-        }]
+        }
+      */
+      ]
     }
   }
 
