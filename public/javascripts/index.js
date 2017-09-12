@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var timeDataArray = [],
     accXDataArray = [],     //temperatureData
-    accYDataArray = [];     //humidityData
+    accYDataArray = [],     //humidityData
     accZDataArray = [];     
   var data = {
     labels: timeDataArray,
