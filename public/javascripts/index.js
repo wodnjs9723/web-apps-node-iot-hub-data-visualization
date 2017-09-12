@@ -109,6 +109,7 @@ $(document).ready(function () {
         accXDataArray.shift();
       }
 
+      /*
       // ACC Y
       if (obj.accY) {
         accYDataArray.push(obj.accY);    //humidityData
@@ -123,6 +124,7 @@ $(document).ready(function () {
       if (accZDataArray.length > maxLen) {
         accZDataArray.shift();
       }
+      */
       // LineChart Update
       myLineChart.update();
     } catch (err) {
