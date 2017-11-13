@@ -1,5 +1,6 @@
 /*
  * IoT Gateway BLE Script - Microsoft Sample Code - Copyright (c) 2016 - Licensed MIT
+ From MinGyu, Ju
  */
 'use strict';
 
