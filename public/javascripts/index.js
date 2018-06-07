@@ -93,7 +93,7 @@ $(document).ready(function () {
     options: basicOption
   });
 
-  var ws = new WebSocket('wss://' + location.host);
+  var ws = new WebSocket('wss://WonWookHub.azure-devices.net');
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
   }
