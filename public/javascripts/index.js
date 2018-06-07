@@ -48,7 +48,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Real-time Data',
+      text: 'Harmful Gas & CO Gas Real-time Data',
       fontSize: 36
     },
     scales: {
