@@ -1,14 +1,14 @@
 $(document).ready(function () {
   var timeDataArray = [],
-    accXDataArray = [],     //temperatureData
-    accYDataArray = [],     //humidityData
+    accXDataArray = [],     //Harmful GasData
+    accYDataArray = [],     //Co GasData
     accZDataArray = [];     
   var data = {
     labels: timeDataArray,
     datasets: [
       {
         fill: false,
-        label: 'accX',
+        label: 'Harmful Gas',
         yAxisID: 'accX',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
@@ -17,11 +17,10 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accXDataArray
       }
-      /*
       ,
       {
         fill: false,
-        label: 'accY',
+        label: 'Co Gas',
         yAxisID: 'accY',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
@@ -29,7 +28,9 @@ $(document).ready(function () {
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: accYDataArray
-      },
+      }
+            /*
+        ,
       {
         fill: false,
         label: 'accZ',
@@ -56,21 +57,22 @@ $(document).ready(function () {
         id: 'accX',
         type: 'linear',
         scaleLabel: {
-          labelString: 'AccX(X)',
+          labelString: 'Harmful Gas',
           display: true
         },
         position: 'left',
       }
-      /*
       , {
           id: 'accY',
           type: 'linear',
           scaleLabel: {
-            labelString: 'AccY(Y)',
+            labelString: 'CO Gas',
             display: true
           },
           position: 'right'
-        }, {
+        }
+        /*
+        , {
           id: 'accZ',
           type: 'linear',
           scaleLabel: {
@@ -120,7 +122,7 @@ $(document).ready(function () {
         accXDataArray.shift();
       }
 
-      /*
+     
       // ACC Y
       if (obj.accY) {
         accYDataArray.push(obj.accY);    //humidityData
@@ -128,6 +130,7 @@ $(document).ready(function () {
       if (accYDataArray.length > maxLen) {
         accYDataArray.shift();
       }
+      /*
       // ACC Z
       if (obj.accZ) {
         accYDataArray.push(obj.accZ);
