@@ -48,7 +48,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'AccX, AccY, AccZ Real-time Data',
+      text: 'Harmful Gas & CO Gas Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -93,7 +93,11 @@ $(document).ready(function () {
     options: basicOption
   });
 
-  var ws = new WebSocket('wss://' + location.host);
+
+  var ws = new WebSocket('wss://' + WonWookHub.azure-devices.net);
+
+  /*var ws = new WebSocket('wss://' + SillaHub.azure-devices.net);*/
+
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
   }
