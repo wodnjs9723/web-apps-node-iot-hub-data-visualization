@@ -108,7 +108,7 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.timeunix || !obj.accX || !obj.accY || !obj.accZ) {
+      if(!obj.timeunix || !obj.accX) {
         return;
       }
       timeDataArray.push(obj.timeunix);
