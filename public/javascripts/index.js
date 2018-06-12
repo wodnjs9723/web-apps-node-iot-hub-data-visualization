@@ -98,7 +98,7 @@ $(document).ready(function () {
 
   /*var ws = new WebSocket('wss://' + WonWookHub.azure-devices.net);*/
 
-  var ws = new WebSocket('wss:// + SillaHub.azure-devices.net');
+  var ws = new WebSocket('wss://' + SillaHub.azure-devices.net);
 
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
