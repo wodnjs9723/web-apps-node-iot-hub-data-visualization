@@ -113,6 +113,7 @@ $(document).ready(function () {
       }
       timeDataArray.push(obj.timeunix);
       accXDataArray.push(obj.accX);
+      accYDataArray.push(obj.accY);
       // only keep no more than 50 points in the line chart
       // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
       const maxLen = 50;
