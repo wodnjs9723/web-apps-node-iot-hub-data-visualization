@@ -8,7 +8,7 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'accX',
+        label: 'Harmful Gas',
         yAxisID: 'accX',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
@@ -20,7 +20,7 @@ $(document).ready(function () {
       ,
       {
         fill: false,
-        label: 'accY',
+        label: 'CO Gas',
         yAxisID: 'accY',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
