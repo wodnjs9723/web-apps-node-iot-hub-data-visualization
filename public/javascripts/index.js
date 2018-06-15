@@ -8,7 +8,7 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'Harmful Gas',
+        label: 'HarmfulGas',
         yAxisID: 'HarmfulGas',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
@@ -17,12 +17,12 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accXDataArray
       }
-         /*
+        
       ,
       {
         fill: false,
-        label: 'CO Gas',
-        yAxisID: 'accY',
+        label: 'CoGas',
+        yAxisID: 'CoGas',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
@@ -30,7 +30,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: accYDataArray
       }
-           
+        /*    
         ,
       {
         fill: false,
@@ -50,7 +50,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'Harmful Gas & CO Gas Real-time Data',
+      text: 'HarmfulGas & CoGas Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -58,22 +58,22 @@ $(document).ready(function () {
         id: 'HarmfulGas',
         type: 'linear',
         scaleLabel: {
-          labelString: 'Harmful Gas',
+          labelString: 'HarmfulGas',
           display: true
         },
         position: 'left',
       }
-      /*
+
       , {
-          id: 'accY',
+          id: 'CoGas',
           type: 'linear',
           scaleLabel: {
-            labelString: 'CO Gas',
+            labelString: 'CoGas',
             display: true
           },
           position: 'right'
         }
-        
+        /*
         , {
           id: 'accZ',
           type: 'linear',
