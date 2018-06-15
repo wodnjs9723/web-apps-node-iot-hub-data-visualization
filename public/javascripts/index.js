@@ -9,7 +9,7 @@ $(document).ready(function () {
       {
         fill: false,
         label: 'Harmful Gas',
-        yAxisID: 'accX',
+        yAxisID: 'HarmfulGas',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
@@ -17,6 +17,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accXDataArray
       }
+         /*
       ,
       {
         fill: false,
@@ -29,7 +30,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: accYDataArray
       }
-            /*
+           
         ,
       {
         fill: false,
@@ -54,7 +55,7 @@ $(document).ready(function () {
     },
     scales: {
       yAxes: [{
-        id: 'accX',
+        id: 'HarmfulGas',
         type: 'linear',
         scaleLabel: {
           labelString: 'Harmful Gas',
@@ -62,6 +63,7 @@ $(document).ready(function () {
         },
         position: 'left',
       }
+      /*
       , {
           id: 'accY',
           type: 'linear',
@@ -71,7 +73,7 @@ $(document).ready(function () {
           },
           position: 'right'
         }
-        /*
+        
         , {
           id: 'accZ',
           type: 'linear',
@@ -122,7 +124,7 @@ $(document).ready(function () {
         accXDataArray.shift();
       }
 
-     
+    /*
       // ACC Y
       if (obj.accY) {
         accYDataArray.push(obj.accY);    //humidityData
@@ -130,7 +132,7 @@ $(document).ready(function () {
       if (accYDataArray.length > maxLen) {
         accYDataArray.shift();
       }
-      /*
+      
       // ACC Z
       if (obj.accZ) {
         accYDataArray.push(obj.accZ);
