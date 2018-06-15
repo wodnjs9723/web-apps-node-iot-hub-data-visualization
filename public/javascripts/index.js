@@ -110,9 +110,7 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.timeunix || !obj.accX) {
-        return;
-      }
+     
       timeDataArray.push(obj.timeunix);
       accXDataArray.push(obj.accX);
       // only keep no more than 50 points in the line chart
