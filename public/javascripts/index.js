@@ -17,7 +17,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accXDataArray
       }
-        
+     /*    
       ,
       {
         fill: false,
@@ -30,7 +30,7 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: accYDataArray
       }
-        /*    
+           
         ,
       {
         fill: false,
@@ -50,7 +50,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'HarmfulGas & CoGas Real-time Data',
+      text: 'HarmfulGas Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -63,7 +63,7 @@ $(document).ready(function () {
         },
         position: 'left',
       }
-
+/*
       , {
           id: 'CoGas',
           type: 'linear',
