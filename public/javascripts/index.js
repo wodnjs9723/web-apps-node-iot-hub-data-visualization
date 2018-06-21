@@ -8,13 +8,13 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'accX',
-        yAxisID: 'accX',
-        borderColor: "rgba(255, 204, 0, 1)",
-        pointBoarderColor: "rgba(255, 204, 0, 1)",
-        backgroundColor: "rgba(255, 204, 0, 0.4)",
-        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
-        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
+        label: 'CoGas',
+        yAxisID: 'CoGas',
+        borderColor: "rgba(24, 120, 240, 1)",
+        pointBoarderColor: "rgba(24, 120, 240, 1)",
+        backgroundColor: "rgba(24, 120, 240, 0.4)",
+        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
+        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: accXDataArray
       }
       /*
@@ -23,11 +23,11 @@ $(document).ready(function () {
         fill: false,
         label: 'accY',
         yAxisID: 'accY',
-        borderColor: "rgba(24, 120, 240, 1)",
-        pointBoarderColor: "rgba(24, 120, 240, 1)",
-        backgroundColor: "rgba(24, 120, 240, 0.4)",
-        pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
-        pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        borderColor: "rgba(255, 204, 0, 1)",
+        pointBoarderColor: "rgba(255, 204, 0, 1)",
+        backgroundColor: "rgba(255, 204, 0, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accYDataArray
       },
       {
@@ -48,15 +48,15 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'AccX, AccY, AccZ Real-time Data',
+      text: 'CO Gas Real-time Data',
       fontSize: 36
     },
     scales: {
       yAxes: [{
-        id: 'accX',
+        id: 'CoGas',
         type: 'linear',
         scaleLabel: {
-          labelString: 'AccX(X)',
+          labelString: 'CoGas',
           display: true
         },
         position: 'left',
@@ -102,11 +102,8 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
-      if(!obj.timeunix || !obj.accX || !obj.accY || !obj.accZ) {
-        return;
-      }
-      timeDataArray.push(obj.timeunix);
-      accXDataArray.push(obj.accX);
+      timeDataArray.push(obj.myidx);
+      accXDataArray.push(obj.CoGas);
       // only keep no more than 50 points in the line chart
       // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
       const maxLen = 50;
