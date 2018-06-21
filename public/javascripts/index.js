@@ -1,24 +1,11 @@
 $(document).ready(function () {
   var timeDataArray = [],
-    accXDataArray = [],     //Harmful GasData
-    accYDataArray = [],     //Co GasData
-    accZDataArray = [];     
+    accXDataArray = [],     //Co GasData
+    //accYDataArray = [],     //Co GasData
+    //accZDataArray = [];     
   var data = {
     labels: timeDataArray,
     datasets: [
-      {
-        fill: false,
-        label: 'HarmfulGas',
-        yAxisID: 'HarmfulGas',
-        borderColor: "rgba(255, 204, 0, 1)",
-        pointBoarderColor: "rgba(255, 204, 0, 1)",
-        backgroundColor: "rgba(255, 204, 0, 0.4)",
-        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
-        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
-        data: accXDataArray
-      }
-     /*    
-      ,
       {
         fill: false,
         label: 'CoGas',
@@ -28,9 +15,27 @@ $(document).ready(function () {
         backgroundColor: "rgba(24, 120, 240, 0.4)",
         pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
+        data: accXDataArray
+      }
+
+     /*    
+
+        
+      /*  
+
+      ,
+      {
+        fill: false,
+        label: 'CoGas',
+        yAxisID: 'CoGas',
+        borderColor: "rgba(255, 204, 0, 1)",
+        pointBoarderColor: "rgba(255, 204, 0, 1)",
+        backgroundColor: "rgba(255, 204, 0, 0.4)",
+        pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
+        pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accYDataArray
       }
-           
+
         ,
       {
         fill: false,
@@ -50,15 +55,19 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
+
       text: 'HarmfulGas Real-time Data',
+
+      text: 'CoGas Real-time Data',
+
       fontSize: 36
     },
     scales: {
       yAxes: [{
-        id: 'HarmfulGas',
+        id: 'CoGas',
         type: 'linear',
         scaleLabel: {
-          labelString: 'HarmfulGas',
+          labelString: 'CoGas',
           display: true
         },
         position: 'left',
@@ -73,7 +82,7 @@ $(document).ready(function () {
           },
           position: 'right'
         }
-        /*
+        
         , {
           id: 'accZ',
           type: 'linear',
@@ -112,7 +121,7 @@ $(document).ready(function () {
       var obj = JSON.parse(message.data);
      
       timeDataArray.push(obj.myidx);
-      accXDataArray.push(obj.HarmfulGas);
+      accXDataArray.push(obj.CoGas);
       // only keep no more than 50 points in the line chart
       // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
       const maxLen = 50;
