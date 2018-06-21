@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var timeDataArray = [],
-    accXDataArray = [],     //Co GasData
+    accXDataArray = [],     //HarmfulGas Data
     //accYDataArray = [],     //Co GasData
     //accZDataArray = [];     
   var data = {
@@ -8,8 +8,8 @@ $(document).ready(function () {
     datasets: [
       {
         fill: false,
-        label: 'CoGas',
-        yAxisID: 'CoGas',
+        label: 'HarmfulGas',
+        yAxisID: 'HarmfulGas',
         borderColor: "rgba(24, 120, 240, 1)",
         pointBoarderColor: "rgba(24, 120, 240, 1)",
         backgroundColor: "rgba(24, 120, 240, 0.4)",
@@ -58,16 +58,14 @@ $(document).ready(function () {
 
       text: 'HarmfulGas Real-time Data',
 
-      text: 'CoGas Real-time Data',
-
       fontSize: 36
     },
     scales: {
       yAxes: [{
-        id: 'CoGas',
+        id: 'HarmfulGas',
         type: 'linear',
         scaleLabel: {
-          labelString: 'CoGas',
+          labelString: 'HarmfulGas',
           display: true
         },
         position: 'left',
@@ -121,7 +119,7 @@ $(document).ready(function () {
       var obj = JSON.parse(message.data);
      
       timeDataArray.push(obj.myidx);
-      accXDataArray.push(obj.CoGas);
+      accXDataArray.push(obj.HarmfulGas);
       // only keep no more than 50 points in the line chart
       // Data를 50개 이내로 유지하기 위해서 쉬프트시킨다.
       const maxLen = 50;
