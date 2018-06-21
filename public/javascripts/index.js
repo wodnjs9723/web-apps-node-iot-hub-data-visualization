@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var timeDataArray = [],
-    accXDataArray = [],     //temperatureData
-    accYDataArray = [],     //humidityData
+    accXDataArray = [],     //Harmful GasData
+    accYDataArray = [],     //Co GasData
     accZDataArray = [];     
   var data = {
     labels: timeDataArray,
@@ -17,19 +17,22 @@ $(document).ready(function () {
         pointHoverBorderColor: "rgba(24, 120, 240, 1)",
         data: accXDataArray
       }
-      /*
+        
+      /*  
       ,
       {
         fill: false,
-        label: 'accY',
-        yAxisID: 'accY',
+        label: 'CoGas',
+        yAxisID: 'CoGas',
         borderColor: "rgba(255, 204, 0, 1)",
         pointBoarderColor: "rgba(255, 204, 0, 1)",
         backgroundColor: "rgba(255, 204, 0, 0.4)",
         pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
         pointHoverBorderColor: "rgba(255, 204, 0, 1)",
         data: accYDataArray
-      },
+      }
+          
+        ,
       {
         fill: false,
         label: 'accZ',
@@ -48,7 +51,7 @@ $(document).ready(function () {
   var basicOption = {
     title: {
       display: true,
-      text: 'CO Gas Real-time Data',
+      text: 'CoGas Real-time Data',
       fontSize: 36
     },
     scales: {
@@ -61,16 +64,18 @@ $(document).ready(function () {
         },
         position: 'left',
       }
-      /*
+/*
       , {
-          id: 'accY',
+          id: 'CoGas',
           type: 'linear',
           scaleLabel: {
-            labelString: 'AccY(Y)',
+            labelString: 'CoGas',
             display: true
           },
           position: 'right'
-        }, {
+        }
+        
+        , {
           id: 'accZ',
           type: 'linear',
           scaleLabel: {
@@ -93,7 +98,11 @@ $(document).ready(function () {
     options: basicOption
   });
 
+
+  /*var ws = new WebSocket('wss://' + WonWookHub.azure-devices.net);*/
+
   var ws = new WebSocket('wss://' + location.host);
+
   ws.onopen = function () {
     console.log('Successfully connect WebSocket');
   }
@@ -102,6 +111,7 @@ $(document).ready(function () {
     console.log('receive message' + message.data);
     try {
       var obj = JSON.parse(message.data);
+     
       timeDataArray.push(obj.myidx);
       accXDataArray.push(obj.CoGas);
       // only keep no more than 50 points in the line chart
@@ -113,7 +123,7 @@ $(document).ready(function () {
         accXDataArray.shift();
       }
 
-      /*
+    /*
       // ACC Y
       if (obj.accY) {
         accYDataArray.push(obj.accY);    //humidityData
@@ -121,6 +131,7 @@ $(document).ready(function () {
       if (accYDataArray.length > maxLen) {
         accYDataArray.shift();
       }
+      
       // ACC Z
       if (obj.accZ) {
         accYDataArray.push(obj.accZ);
